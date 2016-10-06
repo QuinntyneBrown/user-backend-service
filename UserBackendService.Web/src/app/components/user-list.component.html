@@ -1,0 +1,31 @@
+<div class="user-list">
+    <h1>Users</h1>
+
+    <table>
+        <tr class="user-list-header">
+            <td>
+
+            </td>
+            <td>
+                Name
+            </td>
+            <td>
+                Actions
+            </td>
+        </tr>
+        <tr *ngFor="let entity of entities; let i = index">
+            <td>
+                <a class="user-list-item-count">{{ i + 1 }}</a>
+            </td>
+            <td class="user-list-item-name-column">
+                <a (click)="onSelect.emit({ value: entity })">{{ entity.name }}</a>
+            </td>
+            <td>
+                <a (click)="onDelete.emit({ value: entity })" class="user-list-item-action">DELETE</a>
+                &nbsp;&nbsp;|&nbsp;&nbsp;
+                <a (click)="onEdit.emit({ value: entity })" class="user-list-item-action">EDIT</a>
+            </td>
+        </tr>
+    </table>
+
+</div>

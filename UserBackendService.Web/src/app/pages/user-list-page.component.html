@@ -1,0 +1,8 @@
+<div class="user-list-page">
+    <one-column-layout>
+		<a [routerLink]="['/user']" href="">CREATE USER</a>
+        <user-list [entities]="_store.users$() | async"
+                   (onDelete)="_userActions.remove({ id: $event.value.id })"
+                   (onEdit)="_router.navigate(['user', $event.value.id])"></user-list>
+    </one-column-layout>    
+</div>
