@@ -8,6 +8,7 @@ import { App } from "../models";
 })
 export class AppListComponent {     
     @Input() public entities: Array<App> = [];
+    @Output() onUsers: EventEmitter<{ value: App }> = new EventEmitter<{ value: App }>();
     @Output() onDelete: EventEmitter<{ value: App }> = new EventEmitter<{ value: App }>();
     @Output() onSelect: EventEmitter<{ value: App }> = new EventEmitter<{ value: App }>();
     @Output() onEdit: EventEmitter<{ value: App }> = new EventEmitter<{ value: App }>();

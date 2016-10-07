@@ -20,6 +20,7 @@ namespace UserBackendService.Services
             var entity = _repository.GetAll()
                 .FirstOrDefault(x => x.Id == request.Id && x.IsDeleted == false);
             if (entity == null) _repository.Add(entity = new User());
+            entity.AppId = request.AppId;
             entity.Name = request.Name;
             entity.Email = request.Email;
             entity.Username = request.Username;

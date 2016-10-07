@@ -7,6 +7,7 @@ namespace UserBackendService.Models
     {
         public int Id { get; set; }
         public Guid Guid { get; set; } = Guid.NewGuid();
+        public int? AppId { get; set; }
         public string Name { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
@@ -14,6 +15,7 @@ namespace UserBackendService.Models
         public string Firstname { get; set; }
         public string Lastname { get; set; }
         public string Fullname { get { return $"{Firstname} {Lastname}"; } }
+        public App App { get; set; }
         public bool IsDeleted { get; set; }        
     }
 }

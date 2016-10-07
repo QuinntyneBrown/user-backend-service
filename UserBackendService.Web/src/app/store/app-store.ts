@@ -63,7 +63,7 @@ export class AppStore {
             })
     }
 
-    public users(): Observable<Array<User>> {
+    public users$(): Observable<Array<User>> {
         return this._store.select("apps")
             .map((data: { users: Array<User> }) => {
                 return data.users;

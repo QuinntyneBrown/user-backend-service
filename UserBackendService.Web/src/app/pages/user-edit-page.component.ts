@@ -8,7 +8,7 @@ import { AppStore } from "../store";
     styles: [require("./user-edit-page.component.scss")],
     selector: "user-edit-page"
 })
-export class UserEditPageComponent { 
+export class UserEditPageComponent implements OnInit { 
     constructor(private _userActions: UserActions, 
         private _router: Router,
         private _activatedRoute: ActivatedRoute,
@@ -16,16 +16,18 @@ export class UserEditPageComponent {
     ) { }
 
     ngOnInit() {
-        this._userActions.getById({ id: this._activatedRoute.snapshot.params["id"] });
+        if (this._activatedRoute.snapshot.params["userId"])
+            this._userActions.getById({ id: this._activatedRoute.snapshot.params["userId"] });
     }
 
     public get entity$() {
-        return this._store.userById$(this._activatedRoute.snapshot.params["id"]);
+        return this._store.userById$(this._activatedRoute.snapshot.params["userId"]);
     }
 
     public onSubmit($event: any) {
         this._userActions.add({
             id: $event.value.id,
+            appId: this._activatedRoute.snapshot.params["appId"],
             name: $event.value.name
         });
 

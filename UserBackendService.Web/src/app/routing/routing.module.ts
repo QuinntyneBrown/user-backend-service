@@ -18,16 +18,24 @@ export const routes: Routes = [
         component: AppEditPageComponent
     },
     {
+        path: 'app/:id',
+        component: AppEditPageComponent
+    },
+    {
         path: 'apps',
         component: AppListPageComponent
     },
     {
-        path: 'user',
+        path: 'app/:appId/user',
         component: UserEditPageComponent
     },
     {
-        path: 'users',
+        path: 'app/:appId/users',
         component: UserListPageComponent
+    },
+    {
+        path: 'app/:appId/user/:userId',
+        component: UserEditPageComponent
     }
 ];
 
