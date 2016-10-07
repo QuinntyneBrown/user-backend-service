@@ -11,7 +11,7 @@ import {
 export const routes: Routes = [
     {
         path: '',
-        component: HomePageComponent
+        component: AppListPageComponent
     },
     {
         path: 'app',

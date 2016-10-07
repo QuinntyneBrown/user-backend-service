@@ -1,1 +1,14 @@
 @import "../styles/index";
+
+
+side-nav, .main-content {
+    position:relative;
+    float:left;
+}
+
+:host::after {
+    display:block;
+    content: " ";
+    clear:both;
+    font-size:0;
+}

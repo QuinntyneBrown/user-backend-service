@@ -226,6 +226,9 @@
     <Compile Include="Dtos\UserDto.cs" />
     <Compile Include="Dtos\UserAddOrUpdateRequestDto.cs" />
     <Compile Include="Dtos\UserAddOrUpdateResponseDto.cs" />
+    <Compile Include="Services\UserService.cs" />
+    <Compile Include="Services\IUserService.cs" />
+    <Compile Include="Controllers\UserController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

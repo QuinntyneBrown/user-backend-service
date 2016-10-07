@@ -21,6 +21,7 @@ namespace UserBackendService
             container.RegisterType<IEncryptionService, EncryptionService>();
             container.RegisterType<ILogger, Logger>();
             container.RegisterType<IAppService, AppService>();
+            container.RegisterType<IUserService, UserService>();
             container.RegisterInstance(AuthConfiguration.LazyConfig);            
             return container;
         }

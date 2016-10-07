@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UserBackendService.Dtos;
 using UserBackendService.Data;
 using System.Linq;
+using System.Data.Entity;
 
 namespace UserBackendService.Services
 {
@@ -28,14 +29,20 @@ namespace UserBackendService.Services
         public ICollection<AppDto> Get()
         {
             ICollection<AppDto> response = new HashSet<AppDto>();
-            var entities = _repository.GetAll().Where(x => x.IsDeleted == false).ToList();
+            var entities = _repository
+                .GetAll()
+                .Include(x=>x.Users)
+                .Where(x => x.IsDeleted == false).ToList();
             foreach (var entity in entities) { response.Add(new AppDto(entity)); }
             return response;
         }
 
         public AppDto GetById(int id)
         {
-            return new AppDto(_repository.GetAll().Where(x => x.Id == id && x.IsDeleted == false).FirstOrDefault());
+            return new AppDto(_repository
+                .GetAll()
+                .Include(x => x.Users)
+                .Where(x => x.Id == id && x.IsDeleted == false).FirstOrDefault());
         }
 
         public dynamic Remove(int id)

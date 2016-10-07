@@ -1,0 +1,24 @@
+:host > div {
+    max-width:300px;
+    padding: 0px 15px;
+    display:block;
+}
+
+ul {
+    margin:0;
+    padding:0;
+    list-style:none;
+
+    li {
+        a,
+        a:link,
+        a:visited,
+        a:hover {
+            display:block;
+            cursor:pointer;
+            text-decoration:none;
+            line-height:2em;
+        }
+    }
+}
+

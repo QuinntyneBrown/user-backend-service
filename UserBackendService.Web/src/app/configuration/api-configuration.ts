@@ -1,3 +1,3 @@
 export const apiCofiguration = {
-    baseUrl: ""
+    baseUrl: "http://user-backend-service.azurewebsites.net"
 };

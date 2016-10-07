@@ -201,6 +201,12 @@
     <Content Include="dist\polyfills.js" />
     <Content Include="dist\vendor.js" />
     <Content Include="packages.config" />
+    <Content Include="src\app\app.component.html">
+      <DependentUpon>app.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\app.component.scss">
+      <DependentUpon>app.component.ts</DependentUpon>
+    </Content>
     <Content Include="src\app\components\app-edit-form.component.html">
       <DependentUpon>app-edit-form.component.ts</DependentUpon>
     </Content>
@@ -212,6 +218,12 @@
     </Content>
     <Content Include="src\app\components\app-list.component.scss">
       <DependentUpon>app-list.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\components\one-column-layout.component.html">
+      <DependentUpon>one-column-layout.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\components\one-column-layout.component.scss">
+      <DependentUpon>one-column-layout.component.ts</DependentUpon>
     </Content>
     <Content Include="src\app\components\page-header.component.html">
       <DependentUpon>page-header.component.ts</DependentUpon>
@@ -286,8 +298,6 @@
     <Content Include="tsconfig.json" />
     <Content Include="typedoc.json" />
     <Content Include="typings.json" />
-    <Content Include="src\app\app.component.scss" />
-    <Content Include="src\app\app.component.html" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="index.html" />
@@ -410,6 +420,7 @@
     <TypeScriptCompile Include="src\app\pages\user-edit-page.component.ts" />
     <TypeScriptCompile Include="src\app\pages\app-edit-page.component.ts" />
     <TypeScriptCompile Include="src\app\components\page-header.component.ts" />
+    <TypeScriptCompile Include="src\app\components\one-column-layout.component.ts" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
 </Project>

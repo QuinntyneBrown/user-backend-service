@@ -6,7 +6,7 @@ using System.Web.Http.Description;
 
 namespace UserBackendService.Controllers
 {
-    [Authorize]
+    [AllowAnonymous]
     [RoutePrefix("api/app")]
     public class AppController : ApiController
     {
